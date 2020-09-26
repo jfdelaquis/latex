@@ -3,3 +3,5 @@ local/
 
 # Ignored file extensions
 *.DS_Store
+*.swp
+*.log
