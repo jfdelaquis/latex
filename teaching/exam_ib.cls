@@ -59,6 +59,10 @@
 \runningfooter{}{}{\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}}
 \SolutionEmphasis{\color{blue}}
 
+\unframedsolutions
+\renewcommand{\solutiontitle}{}
+\SolutionEmphasis{\color{blue}}
+
 %Hyperref for reference to quiestions by hyperlink, keeping the color black
 \usepackage[hidelinks]{hyperref}
 \hypersetup{
