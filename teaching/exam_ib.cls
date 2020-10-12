@@ -55,8 +55,16 @@
 \firstpageheadrule
 \runningheader{\textsl{\testclass}}{-- \thepage ~--}{\textsl\testtitle}
 \runningheadrule
-\firstpagefooter{}{}{\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}}
-\runningfooter{}{}{\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}}
+\firstpagefooter{}{}{
+	\ifprintanswers
+	\else
+	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	\fi}
+\runningfooter{}{}{
+	\ifprintanswers
+	\else
+	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	\fi}
 \SolutionEmphasis{\color{blue}}
 
 \unframedsolutions

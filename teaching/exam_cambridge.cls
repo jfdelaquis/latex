@@ -32,8 +32,16 @@
 	\setlength{\rightpointsmargin}{1.25cm}
 \bracketedpoints
 
-\firstpagefooter{}{}{\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}}
-\runningfooter{}{}{\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}}
+\firstpagefooter{}{}{
+	\ifprintanswers
+	\else
+	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	\fi}
+\runningfooter{}{}{
+	\ifprintanswers
+	\else
+	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	\fi}
 
 \unframedsolutions
 \renewcommand{\solutiontitle}{}
