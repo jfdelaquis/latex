@@ -5,7 +5,7 @@ This repository is for any custom LaTeX class files or packages. Repository shou
 * Mac: `/usr/local/texlive/texmf-local/tex/latex`
 * Windows: `/c/textlive/texmf-local`
 
-After changing or adding any files to the directory, you need to rebuild the LaTeX tree by running `texhash` in the command line. It is a good idea to run the command after updating the repository. The repository should be cloned directly in 
+After changing or adding any files to the directory, you need to rebuild the LaTeX tree by running `texhash` in the command line. It is a good idea to run the command after updating the repository. The repository should be cloned directly in the texmf folder (as outlined above or in your custom texmf location).
 
 ## teaching
 This is a folder containing class files and related files when writing exams or class notes. The class files are essentially a preamble in order to keep the actual exam files at a minimum and to retain consistency in the document layout.
@@ -21,7 +21,7 @@ The following commands are defined:
 
 ### coverpage
 This is a `.tex` file used as `\input` if a coverpage is desired.
-Following the template files (exam name, etc), a coverpage with the title, date, duration and logo will be created, along with a vertical grade table. Notes for the exam can also be added.
+Following the template files (exam name, etc), a coverpage with the title, date, duration and logo will be created, along with a vertical grade table. The logo should be named `logo` (in any format permissible by LaTeX). Notes for the exam can also be added.
 To input into an `exam` based class file, add
 ```
 \input{coverpage}
