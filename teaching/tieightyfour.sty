@@ -1,0 +1,88 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{tieightyfour}[2021/05/15 TI EightyFour Keys]
+
+% This package provides an easy way to add TI84 keys in your document. Especially useful when you want to indicate which keys were pressed to obtain a value, or to explain how to perform certain operations specific to the calculator.
+
+\RequirePackage{tikz}
+
+% Commands for the white keys
+\newcommand{\whitekey}[3]{
+	\begin{tikzpicture}[baseline=-0.5ex]
+		\node (key) [rectangle, rounded corners, draw, minimum width=1.2cm, minimum height=0.8cm] {\large \textbf{#1}};
+		\node [xshift=-4mm, yshift=5.7mm, inner sep=0]{\small \color{blue!90!black} #2};
+		\node [xshift=4mm, yshift=5.7mm, inner sep=0]{\small \color{green!50!black} #3};
+	\end{tikzpicture}
+}
+\newcommand{\tizero}{\whitekey{0}{catalog}{\textvisiblespace}}
+\newcommand{\tione}{\whitekey{1}{L1}{Y}}
+\newcommand{\titwo}{\whitekey{2}{L2}{Z}}
+\newcommand{\tithree}{\whitekey{3}{L3}{$\theta$}}
+\newcommand{\tifour}{\whitekey{4}{L4}{T}}
+\newcommand{\tifive}{\whitekey{5}{L5}{U}}
+\newcommand{\tisix}{\whitekey{6}{L6}{V}}
+\newcommand{\tiseven}{\whitekey{7}{u}{O}}
+\newcommand{\tieight}{\whitekey{8}{v}{P}}
+\newcommand{\tinine}{\whitekey{9}{w}{Q}}
+\newcommand{\tidot}{\whitekey{$\cdot$}{\textit{i}}{:}}
+\newcommand{\tineg}{\whitekey{$(-)$}{ans}{?}}
+\newcommand{\tienter}{\whitekey{enter}{entry}{solve}}
+\newcommand{\tiplus}{\whitekey{$+$}{mem}{"}}
+\newcommand{\timinus}{\whitekey{$-$}{]}{W}}
+\newcommand{\titimes}{\whitekey{$\times$}{[}{R}}
+\newcommand{\tidiv}{\whitekey{$\div$}{e}{M}}
+\newcommand{\tifunction}{\whitekey{y=}{stat plot}{f1}}
+\newcommand{\tiwindow}{\whitekey{window}{tblset}{f2}}
+\newcommand{\tizoom}{\whitekey{zoom}{format}{f3}}
+\newcommand{\titrace}{\whitekey{trace}{calc}{f4}}
+\newcommand{\tigraph}{\whitekey{graph}{table}{f5}}
+
+% Commands for the black keys
+\newcommand{\blackkey}[3]{
+	\begin{tikzpicture}[baseline=-0.5ex]
+		\node [fill=black, text=white, rectangle, rounded corners, draw, minimum width=1.2cm, minimum height=0.8cm] {\large \textbf{#1}};
+		\node [xshift=-4mm, yshift=5.7mm, inner sep=0]{\small \color{blue!90!black} #2};
+		\node [xshift=4mm, yshift=5.7mm, inner sep=0]{\small \color{green!50!black} #3};
+	\end{tikzpicture}
+}
+\newcommand{\tistore}{\blackkey{sto$\rightarrow$}{rcl}{X}}
+\newcommand{\tiln}{\blackkey{ln}{$e^x$}{S}}
+\newcommand{\tilog}{\blackkey{log}{$10^x$}{N}}
+\newcommand{\tisquared}{\blackkey{$x^2$}{$\sqrt{\phantom{x}}$}{I}}
+\newcommand{\tiinverse}{\blackkey{$x^{-1}$}{matrix}{D}}
+\newcommand{\timath}{\blackkey{math}{test}{A}}
+\newcommand{\ticomma}{\blackkey{,}{EE}{J}}
+\newcommand{\tileft}{\blackkey{(}{\{}{K}}
+\newcommand{\tiright}{\blackkey{)}{\}}{L}}
+\newcommand{\tisin}{\blackkey{sin}{$\sin^{-1}$}{E}}
+\newcommand{\ticos}{\blackkey{cos}{$\cos^{-1}$}{F}}
+\newcommand{\titan}{\blackkey{tan}{$\tan^{-1}$}{G}}
+\newcommand{\tiexp}{\blackkey{$\wedge$}{$\pi$}{H}}
+\newcommand{\tiapps}{\blackkey{apps}{angle}{B}}
+\newcommand{\tiprgm}{\blackkey{prgm}{draw}{C}}
+\newcommand{\tivars}{\blackkey{vars}{distr}{}}
+\newcommand{\ticlear}{\blackkey{clear}{}{}}
+
+% Commands for the black keys that only have one option for the 2nd key
+\newcommand{\blackkeyone}[2]{
+	\begin{tikzpicture}[baseline=-0.5ex]
+		\node [fill=black, text=white, rectangle, rounded corners, draw, minimum width=1.2cm, minimum height=0.8cm] {\large \textbf{#1}};
+		\node [yshift=5.7mm, inner sep=0]{\small \color{blue!90!black} #2};
+	\end{tikzpicture}
+}
+\newcommand{\tivariable}{\blackkeyone{X,T,$\theta$,$n$}{link}}
+\newcommand{\tistat}{\blackkeyone{stat}{list}}
+\newcommand{\timode}{\blackkeyone{mode}{quit}}
+\newcommand{\tidel}{\blackkeyone{del}{ins}}
+
+% Commands for the 2nd and alpha key
+\newcommand{\tisecond}{
+	\begin{tikzpicture}[baseline=-0.5ex]
+		\node [fill=blue!30, text=white, rectangle, rounded corners, draw, minimum width=1.2cm, minimum height=0.8cm] {\large \textbf{2nd}};
+	\end{tikzpicture}
+}
+\newcommand{\tialpha}{
+	\begin{tikzpicture}[baseline=-0.5ex]
+		\node [fill=green!70!black, text=white, rectangle, rounded corners, draw, minimum width=1.2cm, minimum height=0.8cm] {\large \textbf{alpha}};
+		\node [yshift=5.7mm, inner sep=0]{\small \color{blue!90!black} A-lock};
+	\end{tikzpicture}
+}

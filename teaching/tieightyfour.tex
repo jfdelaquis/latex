@@ -1,0 +1,41 @@
+\documentclass[a4paper]{article}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{tieightyfour}
+
+\setlength{\parindent}{0pt}
+\pagestyle{empty}
+
+\title{\vspace{-3cm}The TI84 Package}
+\author{Jean-François Delaquis}
+\date{2021/05/15}
+
+\begin{document}
+\maketitle
+The package provides commands to typeset the TI84 calculator keys when writing documents. It was written to aid writing steps involved when using the calculator for students at the high school level, in a course where this particular model was used.
+
+All key symbols are generated using TikZ. All commands begin with the prefix \verb|\ti|.
+
+The table below shows the available commands to directly add calculator keys inline.
+
+\renewcommand\arraystretch{3}
+\begin{center}
+	\begin{tabular}{cc||cc||cc}
+		\textbf{Key} & \textbf{Command} & \textbf{Key} & \textbf{Command} & \textbf{Key} & \textbf{Command}\\
+		\tizero & \verb|\tizero| & \tione & \verb|\tione| & \titwo & \verb|\titwo|\\
+		\tithree & \verb|\tithree| & \tifour & \verb|\tifour| & \tifive & \verb|\tifive|\\
+		\tisix & \verb|\tisix| & \tiseven & \verb|\tiseven| & \tieight & \verb|\tieight|\\
+		\tinine & \verb|\tinine| & \tidot & \verb|\tidot| & \tineg & \verb|\tineg|\\
+		\tienter & \verb|\tienter| & \tiplus & \verb|\tiplus| & \timinus & \verb|\timinus|\\
+		\titimes & \verb|\titimes| & \tidiv & \verb|\tidiv| & \tifunction & \verb|\tifunction|\\
+		\tiwindow & \verb|\tiwindow| & \tizoom & \verb|\tizoom| & \titrace & \verb|\titrace|\\
+		\tigraph & \verb|\tigraph| & \tistore & \verb|\tistore| & \tiln & \verb|\tiln|\\
+		\tilog & \verb|\tilog| & \tisquared & \verb|\tisquared| & \tiinverse & \verb|\tiinverse|\\
+		\timath & \verb|\timath| & \ticomma & \verb|\ticomma| & \tileft & \verb|\tileft|\\
+		\tiright & \verb|\tiright| & \tisin & \verb|\tisin| & \ticos & \verb|\ticos|\\
+		\titan & \verb|\titan| & \tiexp & \verb|\tiexp| & \tiapps & \verb|\tiapps|\\
+		\tiprgm & \verb|\tiprgm| & \tivars & \verb|\tivars| & \ticlear & \verb|\ticlear|\\
+		\tivariable & \verb|\tivariable| & \tistat & \verb|\tistat| & \timode & \verb|\timode|\\
+		\tidel & \verb|\tidel| & \tisecond & \verb|\tisecond| & \tialpha & \verb|\tialpha|\\
+	\end{tabular}
+\end{center}
+\end{document}
