@@ -9,7 +9,7 @@
 %----------------%
 \RequirePackage{amsmath, amssymb, amsfonts}
 \RequirePackage{siunitx}
-	\sisetup{per-mode = symbol} %Will output globally with a slash. Other options: reciprocal, fraction
+	\sisetup{per-mode = power} %Will output globally with a slash. Other options: reciprocal, fraction
 \RequirePackage{tikz}
 
 %----Graphics----%
@@ -55,16 +55,18 @@
 \firstpageheadrule
 \runningheader{\textsl{\testclass}}{-- \thepage ~--}{\textsl\testtitle}
 \runningheadrule
-\firstpagefooter{}{}{
-	\ifprintanswers
-	\else
-	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
-	\fi}
-\runningfooter{}{}{
-	\ifprintanswers
-	\else
-	\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
-	\fi}
+\firstpagefooter{}{}{}
+\runningfooter{}{}{}
+%\firstpagefooter{}{}{
+	%\ifprintanswers
+	%\else
+	%\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	%\fi}
+%\runningfooter{}{}{
+	%\ifprintanswers
+	%\else
+	%\fbox{\fbox{\makebox[3.7cm][r]{\Large Points:\hspace{2em} / \pointsonpage{\thepage}}}}
+	%\fi}
 \SolutionEmphasis{\color{blue}}
 
 \unframedsolutions
