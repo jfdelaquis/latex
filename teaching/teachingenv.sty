@@ -1,0 +1,104 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{teachingenv}[2022/03/06 teaching commands]
+
+% Often used packages and custom commands in LaTeX documents used for my teaching.
+%----------------%
+%    Packages    %
+%----------------%
+\RequirePackage{amsmath, amssymb, amsfonts}
+\RequirePackage{siunitx}
+	\DeclareSIUnit\litre{\liter} % Capital L for litres
+\RequirePackage{tikz}
+
+%----Graphics----%
+\RequirePackage{graphicx}
+\graphicspath{{images/}} % picture files alternative location
+
+\makeatletter
+\def\input@path{{images/}} % pdf_tex files alternative location
+\makeatother
+
+%-----Tables-----%
+\RequirePackage{array}
+\RequirePackage{color, colortbl}
+
+% Columns with centered text paragraph style
+\newcolumntype{C}[1]{>{\centering\let\newline\\\arraybackslash\hspace{0pt}}p{#1}} 
+
+% Larger tables globally
+\renewcommand{\arraystretch}{1.5}
+
+% Euro symbols
+\RequirePackage{eurosym}
+
+%++++++++++++++++++++++++++++++++++++++++++++
+%              Custom Commands              +
+%++++++++++++++++++++++++++++++++++++++++++++
+
+%Adding a blank page with 'BLANK PAGE' written top centre
+\newcommand\blankpage{
+	\newpage
+	\hfill \textbf{\uppercase{blank page}} \hfill
+	\thispagestyle{empty}
+	\newpage
+	}
+
+%++++++++++++++++++++++++
+%  Vectors and Matrices +
+%++++++++++++++++++++++++
+
+% Command for bold matrix and vector notation. Mainly for readability in the source code
+\newcommand{\mat}[1]{\mathbf{#1}}
+\newcommand{\vect}[1]{\mathbf{#1}}
+
+% Useful for entering vectors and matrices
+% It is just a wrapper for pmatrix, making sure the spacing is a little larger than
+% the typical spacing of an array. 'nbm' stands for 'n by m'
+\newcommand{\nbm}[1]{
+	\renewcommand{\arraystretch}{1.1}
+	\begin{pmatrix}
+	#1
+	\end{pmatrix}
+}
+
+
+%++++++++++++++++++++++++
+%     Probabilities     +
+%++++++++++++++++++++++++
+\newcommand{\pr}[1]{\text{P}(#1)} %Straight P for probability expressions
+\newcommand{\expect}[1]{\text{E}[#1]} %Straight E and square brackets for expectation expressions
+\newcommand{\variance}[1]{\text{Var}[#1]} %Straight Var and square brackets for Variance expressions
+
+
+%++++++++++++++++++++++++
+%      Statistics       +
+%++++++++++++++++++++++++
+\newcommand{\chisq}{$\chi^2$\ }
+
+
+%++++++++++++++++++++++++
+%        Calculus       +
+%++++++++++++++++++++++++
+\newcommand{\deriv}[2]{\dfrac{\text{d}#1}{\text{d}#2}} %Leibniz differentiation notation
+\newcommand{\diffeq}[2]{\dfrac{\partial #1}{\partial #2}} %Differential equations notation
+
+
+%++++++++++++++++++++++++
+%  Calculator functions +
+%++++++++++++++++++++++++
+
+% Distributions
+\newcommand{\normalpdf}[1]{\texttt{normalpdf}\left(#1\right)}
+\newcommand{\normalcdf}[1]{\texttt{normalcdf}\left(#1\right)}
+\newcommand{\invNorm}[1]{\texttt{invNorm}\left(#1\right)}
+\newcommand{\binomcdf}[1]{\texttt{binomcdf}\left(#1\right)}
+\newcommand{\binompdf}[1]{\texttt{binompdf}\left(#1\right)}
+\newcommand{\poissoncdf}[1]{\texttt{poissoncdf}\left(#1\right)}
+\newcommand{\poissonpdf}[1]{\texttt{poissonpdf}\left(#1\right)}
+
+
+%++++++++++++++++++++++++
+%          Misc.        +
+%++++++++++++++++++++++++
+\newcommand{\negative}{\text{\raisebox{.18em}{-}}} %Some texts write negative numbers with a normal raised hyphen symbol
+\newcommand{\point}[1]{\text{#1}} % Identify a point by name

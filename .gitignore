@@ -1,7 +1,0 @@
-# Don't track the content of the folders:
-local/
-
-# Ignored file extensions
-*.DS_Store
-*.swp
-*.log

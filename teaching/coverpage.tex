@@ -1,34 +1,47 @@
+\vpword{Marks}
 \begin{coverpages}
-	%-------LIS LOGO-------%
+	%-------LOGO-------%
+	\iflogo{
 	\begin{tikzpicture}[remember picture,overlay]
-	\node[anchor=north east,inner sep=0pt, xshift=-1.27cm, yshift=-0.5cm] at (current page.north east)
-	%{\includegraphics[width=2.5cm]{logo}};
-	{\scalebox{0.18}{\input{logo.pdf_tex}}};
+		\node[anchor=north east,inner sep=0pt, xshift=-1.27cm, yshift=-0.5cm] at (current page.north east)
+		{\includegraphics[width=2.5cm]{schoollogo}};
 	\end{tikzpicture}
+}
+\else
+	%Do not print the logo
+\fi
 
 	\vspace{1cm}
 	\hfill {\LARGE\bfseries\testtitle} \hfill ~
 	
-	\vspace{\stretch{1}}
+	\vspace{1.5em}
 	\hfill \testclass \hfill ~
 
-	\vspace{\stretch{1}}
+	\vspace{1em}
 	\hfill \testdate \hfill \testtime \hfill ~ 
 
-	\vspace{1cm}
-	{\Large Name:} \rule{8cm}{0.5px}
+	\vspace{2.5em}
+	{\large Name:} \rule{8cm}{0.5px}
 
-	\vspace{0.5cm}
-	{\large \testnotes}
+	{\testnotes}
 
 	\begin{center}
-		\gradetable
+		\ifpointsbyquestions
+			\multicolumngradetable{\numcols}[questions]
+		\else
+			\multicolumngradetable{\numcols}[pages]
+		\fi
+
 		\vspace{1.5cm}
 				
 		Grade: \makebox[1in]{\hrulefill}
 	\end{center}
 
 	\vspace{\stretch{1}}
-%	Parent Signature: \rule{8cm}{0.5px}
+	
+	\ifparent
+		Parent Signature: \rule{8cm}{0.5px}
+	\else
+	\fi
 \end{coverpages}
 

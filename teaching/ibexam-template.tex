@@ -1,0 +1,75 @@
+\documentclass[]{ibexam}
+%\printanswers
+
+\usepackage{tieightyfour}
+
+%====================
+% Exam Information
+%====================
+\renewcommand{\testtitle}{[Title]}
+\renewcommand{\testclass}{[Class]}
+\renewcommand{\testdate}{01.01.1970}
+\renewcommand{\testtime}{[60] minutes}
+\renewcommand{\testnotes}{
+	\begin{itemize}
+		\item Notice1
+		\item Notice2
+	\end{itemize}
+}
+
+% Should the school logo appear on the coverpage?
+\logotrue
+%\logofalse
+
+% Should the grade table be printed with each row being the total points by questions or pages?
+\pointsbyquestionstrue
+%\pointsbyquestionsfalse
+
+% Should there be a line for a parent's signature? 
+\parenttrue
+%\parentfalse
+
+% In how many columns should the grade table be splitted?
+\def\numcols{1}
+
+\begin{document}
+\ifprintanswers
+	%Do not print the coverpage if solutions are printed
+\else
+	\input{coverpage}
+	\blankpage
+\fi
+
+\begin{questions}
+	\question ~
+	\begin{parts}
+		\part[2] ~
+		\part[5] ~
+	\end{parts}
+
+	\begin{solutionordottedlines}[\stretch{1}]
+		\begin{parts}
+			\part ~
+			\part ~
+		\end{parts}
+	\end{solutionordottedlines}
+
+	\anspage
+	\newpage
+
+	\question ~
+	\begin{parts}
+		\part[2] ~
+		\begin{subparts}
+			\subpart ~
+			\subpart ~
+		\end{subparts}
+		\part[5] ~
+	\end{parts}
+
+	\begin{solutionorbox}[\stretch{1}]
+	\end{solutionorbox}
+
+\end{questions}
+\end{document}
+
